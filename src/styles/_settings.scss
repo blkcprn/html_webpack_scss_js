@@ -1,0 +1,65 @@
+html {
+    box-sizing: border-box;
+    background: var(--bg-html-color);
+    overscroll-behavior: contain;
+    height: 100%;
+}
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: var(--base-font-size);
+    letter-spacing: var(--base-letter-spacing);
+    line-height: var(--base-line-height);
+    font-weight: var(--font-weight-common);
+    margin: 0 auto;
+    background: var(--bg-body-color);
+    color: var(--text-color);
+    min-width: var(--min-body-width);
+    max-width: var(--max-body-width);
+    height: 100%;
+}
+a {
+    font: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+button {
+    font: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+input {
+    font: inherit;
+    display: block;
+    width: 100%;
+}  
+input::placeholder { 
+    font: inherit; 
+}  
+ul {
+    list-style: none;
+}
+svg, path {
+    pointer-events: none;
+}
+.disabled-link {
+    pointer-events: none;
+    cursor: default;
+}
+.pointer {
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}
