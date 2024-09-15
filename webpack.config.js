@@ -1,7 +1,17 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const helper = require('./helpers');
-const loader = require('./loaders');
+const { 
+    Paths, 
+    getHtmlPages,
+} = require('./helpers');
+const { 
+    html_loader,
+    scss_loader,
+    fonts_loader,
+    files_loader,
+    images_loader,
+    babel_loader,
+} = require('./loaders');
 
 
 const pageNames = [
@@ -22,7 +32,7 @@ module.exports = (env) => {
     isProd = !isDev;
     targer = isDev ? 'web' : 'browserslist';
     devtool = isProd ? false : 'source-map';
-    paths = new helper.Paths(isDev);
+    paths = new Paths(isDev);
 
     return {
         mode: env.mode,
@@ -45,16 +55,16 @@ module.exports = (env) => {
         devtool: devtool,
         module: {
             rules: [
-                loader.html_loader,
-                loader.scss_loader(isDev),
-                loader.fonts_loader(paths.outfileFonts),
-                loader.files_loader(paths.outfileFiles),
-                loader.images_loader,
-                loader.babel_loader,
+                html_loader,
+                scss_loader(isDev),
+                fonts_loader(paths.outfileFonts),
+                files_loader(paths.outfileFiles),
+                images_loader,
+                babel_loader,
             ]
         },
         plugins: [
-            ...helper.getHtmlPages(isProd, paths.tmplPath, pageNames),
+            ...getHtmlPages(isProd, paths.tmplPath, pageNames),
             new MiniCssExtractPlugin({
                 filename: paths.outfileCss,
             }),
