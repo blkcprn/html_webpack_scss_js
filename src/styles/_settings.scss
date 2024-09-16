@@ -63,3 +63,43 @@ svg, path {
 .hidden {
     display: none;
 }
+.visually-hidden {
+    @include visually-hidden;
+}
+.stop-scroll {
+    @include stop-scroll;
+}
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+.dropdown {
+    position: absolute;
+    z-index: 5;
+}
+.container {
+    margin: 0 auto;
+    min-width: var(--min-body-width);
+    max-width: var(--max-body-width);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.no-wrap {
+    white-space: nowrap;
+}
+.slider {
+    display: grid;
+    grid-template-rows: min-content;
+    grid-auto-flow: column;
+    gap: 10px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+}
+.slide {
+    position: relative;
+    scroll-snap-align: start;
+    scroll-padding-inline: 10px;
+    width: 100vw;
+}
