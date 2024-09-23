@@ -1,4 +1,4 @@
-const modes = {
+export const modes = {
     light: {
         "--bg-html-color": "#f5f5f5",
         "--bg-body-color": "#f5f5f5",
@@ -15,7 +15,7 @@ const modes = {
     }
 }
 
-class ModeManager {
+export class ModeManager {
     /*
      *    html add data-mode,
      *    For modes icons add some tag with id="mode_<mode key from list_of_modes>"
@@ -88,15 +88,30 @@ class ModeManager {
         if (icons.length > 1) {
             icons.forEach(el => {
                 if (el.id == "mode_" + key) {
-                    el.classList.add("hidden");
+                    el.style.setAttribute('display', 'node');
                 } else {
-                    el.classList.remove("hidden");
+                    el.style.setAttribute('display', 'inline-block');
                 }
             })
         }
     }
 }
-const mode = new ModeManager({
-    modes: modes,
-    default: "light",
-})
+
+// const modeBtn = document.querySelector('#mode-btn');
+// const currentMode = localStorage.getItem('mode');
+// if (currentMode) {
+//     document.documentElement.setAttribute('data-mode', currentMode);
+//     if (currentMode === 'dark') {
+//         modeBtn.checked = true;
+//     }
+// }
+// function modeSwitch(e) {
+//     if (e.target.checked) {
+//         document.documentElement.setAttribute('data-mode', 'dark');
+//         localStorage.setItem('mode', 'dark');
+//     } else {
+//         document.documentElement.setAttribute('data-mode', 'light');
+//         localStorage.setItem('mode', 'light');
+//     }
+// }
+// modeBtn.addEventListener('chenge', modeSwitch, false);

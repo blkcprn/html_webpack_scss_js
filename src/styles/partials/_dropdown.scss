@@ -1,0 +1,34 @@
+.box {
+    width: 350px;
+    text-align: center;
+    color: black;
+}
+.button {
+    background-color: orange;
+    padding: 0.5lh 1.5lh;
+    inline-size: 100%;
+}
+.button:hover,
+.button:focus-visible,
+.menu__link:hover,
+.menu__link:focus-visible {
+    background-color: tomato;
+}
+.menu {
+    line-height: 0;
+    overflow: hidden;
+    color: transparent;
+    transition: line-height 0.5s, color 0.5s;
+    background-color: lightpink
+}
+.menu__item {
+    overflow: hidden;
+}
+.menu__link {
+    display: block;
+    padding: 0.5lh;
+}
+.button.active ~ .menu {
+    line-height: 1.2;
+    color: black;
+}
