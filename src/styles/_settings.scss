@@ -1,7 +1,8 @@
 html {
     box-sizing: border-box;
-    background: var(--bg-html-color);
-    overscroll-behavior: contain;
+    background-color: var(--bg-html-color);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
     height: 100%;
 }
 *,
@@ -16,9 +17,9 @@ body {
     font-size: var(--base-font-size);
     letter-spacing: var(--base-letter-spacing);
     line-height: var(--base-line-height);
-    font-weight: var(--font-weight-common);
+    font-weight: var(--base-font-weight);
     margin: 0 auto;
-    background: var(--bg-body-color);
+    background-color: var(--bg-body-color);
     color: var(--text-color);
     min-width: var(--min-body-width);
     max-width: var(--max-body-width);
@@ -34,19 +35,52 @@ button {
     background: none;
     border: none;
     cursor: pointer;
+    color: inherit;
+}
+strong {
+    font-weight: var(--strong-font-weight);
 }
 img {
     max-width: 100%;
+    vertical-align: middle;
     height: auto;
 }
-input {
+p {
+    padding: var(--gap);
+}
+h1, h2, h3, h4 {
+    font-weight: var(--base-font-weight);
+}
+h1 { 
+    font-size: 2.75em;
+}
+h2 { 
+    font-size: 2.5em;
+}
+h3 { 
+    font-size: 2em;
+}
+h4 { 
+    font-size: 1em;
+}
+textarea {
+    max-width: var(--max-body-width);
+    min-width: calc(var(--min-body-width) / 2);
+    min-height: calc(var(--min-body-width) / 2);
+    padding: var(--gap);
+}
+input, textarea, select {
     font: inherit;
     display: block;
     width: 100%;
-}  
-input::placeholder { 
-    font: inherit; 
-}  
+}
+input::placeholder, textarea::placeholder { 
+    font: inherit;
+    color: inherit;
+}
+input[type=checkbox], input[type=radio] {
+    width: auto;
+}
 ul {
     list-style: none;
 }
@@ -76,30 +110,39 @@ svg, path {
     position: absolute;
 }
 .dropdown {
-    position: absolute;
-    z-index: 5;
+    position: relative;
+    &__btn {
+        cursor: pointer;
+    }
+    &__content {
+        position: absolute;
+        left: auto;
+        right: auto;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 50;
+    }
 }
 .container {
     margin: 0 auto;
     min-width: var(--min-body-width);
     max-width: var(--max-body-width);
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0 var(--gap);
 }
 .no-wrap {
     white-space: nowrap;
 }
-.slider {
+.scroller {
     display: grid;
     grid-template-rows: min-content;
     grid-auto-flow: column;
-    gap: 10px;
+    gap: var(--gap);
     overflow-x: auto;
     overscroll-behavior-inline: contain;
-}
-.slide {
-    position: relative;
-    scroll-snap-align: start;
-    scroll-padding-inline: 10px;
-    width: 100vw;
+    &__item {
+        position: relative;
+        scroll-snap-align: start;
+        scroll-padding-inline: var(--gap);
+        width: 100vw;
+    }
 }
