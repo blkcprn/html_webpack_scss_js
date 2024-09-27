@@ -111,17 +111,25 @@ svg, path {
 }
 .dropdown {
     position: relative;
-    &__btn {
-        cursor: pointer;
-    }
-    &__content {
-        position: absolute;
-        left: auto;
-        right: auto;
-        opacity: 0;
-        visibility: hidden;
-        z-index: 50;
-    }
+}
+.dropdown__btn {
+    cursor: pointer;
+}
+.dropdown__content {
+    position: absolute;
+    left: auto;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 50;
+
+    transform: translateY(20px);
+    transition: transform var(--anim-speed) ease-in-out;
+}
+.dropdown__content--active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
 }
 .container {
     margin: 0 auto;
