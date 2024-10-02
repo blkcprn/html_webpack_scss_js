@@ -1,4 +1,4 @@
-export const animateTransitionY = {
+export const animateTranslateYOpacity = {
     keyframes: [
         {
             transform: "translateY(20px)",

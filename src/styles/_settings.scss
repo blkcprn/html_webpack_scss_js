@@ -103,33 +103,14 @@ svg, path {
 .stop-scroll {
     @include stop-scroll;
 }
+.burger {
+    @include burger;
+}
 .relative {
     position: relative;
 }
 .absolute {
     position: absolute;
-}
-.dropdown {
-    position: relative;
-}
-.dropdown__btn {
-    cursor: pointer;
-}
-.dropdown__content {
-    position: absolute;
-    left: auto;
-    right: 0;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 50;
-
-    transform: translateY(20px);
-    transition: transform var(--anim-speed) ease-in-out;
-}
-.dropdown__content--active {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0px);
 }
 .container {
     margin: 0 auto;

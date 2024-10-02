@@ -1,4 +1,8 @@
 @mixin burger {
+	--burger-width: 2em;
+	--burger-height: 1.5em;
+	--burger-line-height: 2px;
+	
 	width: var(--burger-width);
 	height: var(--burger-height);
 	position: relative;
