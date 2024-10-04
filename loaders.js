@@ -1,16 +1,16 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
 const html_loader = {
     test: /\.html$/i,
-    loader: 'html-loader',
+    loader: "html-loader",
 }
 const scss_loader = (isDevMode) => {
     return {
         test: /\.(scss|css|sass)$/,
         use: [
-            isDevMode ? 'style-loader' : MiniCssExtractPlugin.loader, 
-            'css-loader',
+            isDevMode ? "style-loader" : MiniCssExtractPlugin.loader, 
+            "css-loader",
             {
                 loader: "postcss-loader",
                 options: {
@@ -26,14 +26,14 @@ const scss_loader = (isDevMode) => {
                     },
                 },
             },
-            'sass-loader',
+            "sass-loader",
         ],
     }
 }
 const fonts_loader = (filenameFonts) => {
     return {
         test: /\.(woff|woff2)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
         generator: {
             filename: filenameFonts
         }
@@ -42,7 +42,7 @@ const fonts_loader = (filenameFonts) => {
 const files_loader = (filenameFiles) => {
     return {
         test: /\.(pdf|doc|docx)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
         generator: {
             filename: filenameFiles
         }
@@ -52,7 +52,7 @@ const images_loader = {
     test: /\.(gif|png|jpe?g|svg)$/i,
     use: [
         {
-            loader: 'image-webpack-loader',
+            loader: "image-webpack-loader",
             options: {
                 mozjpeg: {
                     progressive: true,
@@ -80,10 +80,10 @@ const babel_loader = {
     test: /\.(?:js|mjs|cjs)$/,
     exclude: /node_modules/,
     use: {
-        loader: 'babel-loader',
+        loader: "babel-loader",
         options: {
             presets: [
-                ['@babel/preset-env', { targets: "defaults" }]
+                ["@babel/preset-env", { targets: "defaults" }]
             ]
         }
     }

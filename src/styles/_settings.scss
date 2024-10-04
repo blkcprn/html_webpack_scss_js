@@ -46,7 +46,7 @@ img {
     height: auto;
 }
 p {
-    padding: var(--gap);
+    padding: var(--base-gap);
 }
 h1, h2, h3, h4 {
     font-weight: var(--base-font-weight);
@@ -67,7 +67,7 @@ textarea {
     max-width: var(--max-body-width);
     min-width: calc(var(--min-body-width) / 2);
     min-height: calc(var(--min-body-width) / 2);
-    padding: var(--gap);
+    padding: var(--base-gap);
 }
 input, textarea, select {
     font: inherit;
@@ -116,7 +116,7 @@ svg, path {
     margin: 0 auto;
     min-width: var(--min-body-width);
     max-width: var(--max-body-width);
-    padding: 0 var(--gap);
+    padding: 0 var(--base-gap);
 }
 .no-wrap {
     white-space: nowrap;
@@ -125,13 +125,13 @@ svg, path {
     display: grid;
     grid-template-rows: min-content;
     grid-auto-flow: column;
-    gap: var(--gap);
+    gap: var(--base-gap);
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     &__item {
         position: relative;
         scroll-snap-align: start;
-        scroll-padding-inline: var(--gap);
+        scroll-padding-inline: var(--base-gap);
         width: 100vw;
     }
 }

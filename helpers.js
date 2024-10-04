@@ -1,18 +1,18 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 
 class Paths {
-    src = 'src';
-    dist = 'dist';
-    images = 'images';
-    fonts = 'fonts';
-    files = 'files';
-    js = 'js';
-    css = 'styles';
-    html = 'html';
-    entry = 'index.js';
-    public = '/';
+    src = "src";
+    dist = "dist";
+    images = "images";
+    fonts = "fonts";
+    files = "files";
+    js = "js";
+    css = "styles";
+    html = "html";
+    entry = "index.js";
+    public = "/";
     
     constructor(isDevMode) {
         this.isDev = isDevMode;
@@ -27,7 +27,7 @@ class Paths {
         return path.resolve(__dirname, this.src, this.entry);
     }
     get assets() {
-        return path.join(this.images, this.isDev ? '[name][ext]' : '[name].[contenthash][ext]');
+        return path.join(this.images, this.isDev ? "[name][ext]" : "[name].[contenthash][ext]");
     }
     get public() {
         return this.public;
@@ -36,10 +36,10 @@ class Paths {
         return `${this.src}/${this.html}`;
     }
     get outfileJs() {
-        return  `${this.js}/${this.getFileName('js')}`;
+        return  `${this.js}/${this.getFileName("js")}`;
     }
     get outfileCss() {
-        return  `${this.css}/${this.getFileName('css')}`;
+        return  `${this.css}/${this.getFileName("css")}`;
     }
     get outfileFonts() {
         return `${this.fonts}/[name][ext]`;

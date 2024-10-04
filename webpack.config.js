@@ -1,9 +1,9 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const { 
     Paths, 
     getHtmlPages,
-} = require('./helpers');
+} = require("./helpers");
 const { 
     html_loader,
     scss_loader,
@@ -11,12 +11,12 @@ const {
     files_loader,
     images_loader,
     babel_loader,
-} = require('./loaders');
+} = require("./loaders");
 
 
 const pageNames = [
-    'index.html',
-    'about.html',
+    "index.html",
+    "about.html",
 ];
 
 
@@ -28,10 +28,10 @@ const server = {
 
 
 module.exports = (env) => {
-    isDev = env.mode === 'development';
+    isDev = env.mode === "development";
     isProd = !isDev;
-    targer = isDev ? 'web' : 'browserslist';
-    devtool = isProd ? false : 'source-map';
+    targer = isDev ? "web" : "browserslist";
+    devtool = isProd ? false : "source-map";
     paths = new Paths(isDev);
 
     return {
