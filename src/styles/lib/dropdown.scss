@@ -1,0 +1,35 @@
+.dropdown {
+    position: relative;
+    &__toggle {
+        cursor: pointer;
+    }
+    &__content {
+        position: absolute;
+        left: auto;
+        right: 0;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 50;
+        width: fit-content;
+        
+        min-width: 70px;
+        max-width: 200px;
+        background-color: green;
+        
+        transform: translateY(20px);
+        transition: transform var(--anim-speed) var(--anim-timing-function);
+        
+        &--show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0px);
+        }
+    }
+    // &:hover {
+    //     & > .dropdown__content {
+    //         opacity: 1;
+    //         visibility: visible;
+    //         transform: translateY(0px);
+    //     }
+    // }
+}

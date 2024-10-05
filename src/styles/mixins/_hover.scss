@@ -1,0 +1,60 @@
+@mixin hover-color($toColor: var(--weak-contrast-color), $speed: var(--anim-speed), $timeFunc: var(--anim-timing-function)) {
+    transition: color $speed $timeFunc;
+
+    &:hover {
+        color: $toColor;
+    }
+}
+
+
+@mixin hover-underline($bottom: -5px, $height: 2px, $speed: var(--anim-speed), $timeFunc: var(--anim-timing-function)) {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: $bottom;
+        width: 100%;
+        height: $height;
+        opacity: 0;
+        visibility: hidden;
+        background-color: var(--text-color);
+
+        transition: opacity $speed $timeFunc;
+    }
+    &:hover {
+        &::after {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+@mixin hover-dot-before($left: -0.8em, $width: 0.4em, $speed: var(--anim-speed), $timeFunc: var(--anim-timing-function)) {
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: "";
+        left: $left;
+        top: 0.55em;
+        width: 0;
+        height: 0;
+        border-radius: 50px;
+        opacity: 0;
+        visibility: hidden;
+        background-color: var(--text-color);
+        transform: translateY(-50%);
+
+        transition: opacity $speed $timeFunc, width $speed $timeFunc, height $speed $timeFunc;
+    }
+    &:hover {
+        &::before {
+            width: $width;
+            height: $width;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
