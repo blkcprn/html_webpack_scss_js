@@ -1,6 +1,6 @@
-@import "vendors";
-@import "vars";
-@import "fonts";
-@import "mixins";
-@import "icons";
-@import "settings";
+@forward "vendors";
+@forward "vars";
+@forward "fonts";
+@forward "mixins";
+@forward "icons";
+@forward "settings";

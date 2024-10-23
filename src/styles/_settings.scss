@@ -1,3 +1,6 @@
+@use "./mixins" as mixins;
+
+
 html {
     box-sizing: border-box;
     background-color: var(--bg-html-color);
@@ -98,13 +101,13 @@ svg, path {
     display: none;
 }
 .visually-hidden {
-    @include visually-hidden;
+    @include mixins.visually-hidden();
 }
 .stop-scroll {
-    @include stop-scroll;
+    @include mixins.stop-scroll();
 }
 .burger {
-    @include burger;
+    @include mixins.burger();
 }
 .relative {
     position: relative;

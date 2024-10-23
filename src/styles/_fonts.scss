@@ -1,9 +1,9 @@
-@import "./mixins/font-face";
+@use "./mixins/font-face" as ff;
 
 
-@include font-face("Roboto", "roboto/Roboto-Bold", 700);
-@include font-face("Roboto", "roboto/Roboto-Regular", 400);
-@include font-face("Light", "roboto/Roboto-Light", 300);
+@include ff.font-face("Roboto", "roboto/Roboto-Bold", 700);
+@include ff.font-face("Roboto", "roboto/Roboto-Regular", 400);
+@include ff.font-face("Light", "roboto/Roboto-Light", 300);
 
 
 // thin 100
