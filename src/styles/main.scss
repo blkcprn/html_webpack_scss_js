@@ -1,6 +1,13 @@
-@forward "vendors";
-@forward "vars";
-@forward "fonts";
-@forward "mixins";
-@forward "icons";
-@forward "settings";
+// @forward "vendors";
+// @forward "vars";
+// @forward "fonts";
+// @forward "mixins";
+// @forward "icons";
+// @forward "settings";
+
+@use "vendors";
+@use "vars";
+@use "fonts";
+@use "mixins";
+@use "icons";
+@use "settings";
