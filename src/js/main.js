@@ -5,30 +5,40 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 
-class Fixed {
+const modalHendlers = {
+    mobileMenu: function() {
+        const elem = document.querySelector("#mobileMenu");
+        const menuLinks = elem.querySelectorAll(".mobile-menu__list > li > a, .mobile-menu__list > li > h3 > a");
+        const enterlinks = elem.querySelectorAll(".enter a");
+        return [...menuLinks, ...enterlinks];
+    }
+}
+
+class Modal {
     constructor(options={}) {
         this.triggerSelector = options.triggerSelector ?? "[data-open-btn]";
         this.closeSelector = options.closeSelector ?? "[data-close-btn]";
         this.overlaySelector = options.overlaySelector ?? ".overlay";
         this.activeClass = options.activeClass ?? "active";
-        this.fixedTriggers = document.querySelectorAll(this.triggerSelector);
+        this.modalTriggers = document.querySelectorAll(this.triggerSelector);
         this.overlay = document.querySelector(this.overlaySelector);
+        this.handlers = options.handlers ?? {};
         this.setup();
     }
     setup() {
-        if (this.fixedTriggers.length > 0) {
+        if (this.modalTriggers.length > 0) {
             this.setEvents();
         }
     }
     setEvents() {
-        this.fixedTriggers.forEach((elem) => {
+        this.modalTriggers.forEach((elem) => {
             elem.addEventListener("click", (e) => {
                 if (elem !== e.target) return;
                 this.toggle(elem);
             });
         });
     }
-    toggleFixed(elem, show) {
+    toggleModal(elem, show) {
         if (show) {
             elem.classList.add(this.activeClass);
             this.overlay.classList.add(this.activeClass);
@@ -45,15 +55,10 @@ class Fixed {
     }
     getLinks(elem) {
         let links = [];
-        switch (elem.id) {
-            case "mobileMenu":
-                const menuLinks = elem.querySelectorAll(".mobile-menu__list > li > a, .mobile-menu__list > li > h3 > a");
-                const enterlinks = elem.querySelectorAll(".enter a");
-                links = [...menuLinks, ...enterlinks];
-                break;
-            default:
-                links = elem.querySelectorAll("a[tabindex]");
-                break;
+        if (elem.id in this.handlers) {
+            links = this.handlers[elem.id]();
+        } else {
+            links = elem.querySelectorAll("a[tabindex]");
         }
         return links;
     }
@@ -65,13 +70,13 @@ class Fixed {
     toggle(elem) {
         const fixedId = elem.dataset.target;
         const fixedElem = document.querySelector(`#${fixedId}`);
-        this.toggleFixed(fixedElem, true);
+        this.toggleModal(fixedElem, true);
         const closeBtn = fixedElem.querySelector(this.closeSelector);
         closeBtn.addEventListener("click", () => {
-            this.toggleFixed(fixedElem, false);
+            this.toggleModal(fixedElem, false);
         });
         this.overlay.addEventListener("click", () => {
-            this.toggleFixed(fixedElem, false);
+            this.toggleModal(fixedElem, false);
         });
     }
 }
