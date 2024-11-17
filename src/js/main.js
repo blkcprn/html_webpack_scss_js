@@ -212,6 +212,7 @@ class Mode {
         this.modeBtn = document.querySelector(this.btnSelector);
         this.modes = ["light", "dark"];
         this.mode = options.default ?? "light";
+        this.activeClass = options.activeClass ?? "active";
         this.setup();
     }
     setup() {
@@ -283,10 +284,21 @@ class Mode {
     }
     changeIcon(key) {
         if (this.iconHandler) {
-            this.iconHandler(this.mode);
+            this.iconHandler(this.modeBtn, key);
         } else {
-            this.modeBtn.checked = (key == "dark") ? true : false;
-            this.setElemAttributes(this.modeBtn);
+            this.defaultIconHandler(this.modeBtn, key);
+        }
+    }
+    defaultIconHandler(elem, key) {
+        elem.checked = (key == "dark") ? true : false;
+        elem.setAttribute("aria-pressed", elem.checked === true ? "true" : "false");
+        const label = document.querySelector("label[for="+ elem.id +"]");
+        if (label) {
+            if (elem.checked) {
+                label.classList.add(this.activeClass);
+            } else {
+                label.classList.remove(this.activeClass);
+            }
         }
     }
 }
@@ -295,7 +307,9 @@ class Mode {
 window.addEventListener("DOMContentLoaded", () => {
     const mode = new Mode();
     const dropdown = new Dropdown();
-    const fixed = new Fixed();
+    const modal = new Modal({
+        handlers: modalHendlers,
+    });
     const swiper = new Swiper(".swiper", {
         modules: [Navigation, Pagination],
         direction: "horizontal",
@@ -312,4 +326,5 @@ window.addEventListener("DOMContentLoaded", () => {
         },
     });
 });
+
 
