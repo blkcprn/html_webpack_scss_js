@@ -42,6 +42,20 @@
         transform: translateY(0);
     }
 }
+.bigmenu {
+    position: static;
+    &__wrapper {
+        top: auto;
+        left: 0;
+        right: 0;
+        background-color: transparent;
+    }
+    &__content {
+        padding: 2em;
+        background-color: var(--light-color);
+        box-shadow: var(--shadow);
+    }
+}
 .modal {
     position: fixed;
     opacity: 0;
