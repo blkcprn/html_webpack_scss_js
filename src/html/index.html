@@ -32,6 +32,18 @@
                 data-target="mobileMenu"><i class="svg-list"></i></button>
             <ul class="menu__list">
                 <li><a href="#">Home</a></li>
+                <li class="dropdown bigmenu">
+                    <a href="#">Shop<button aria-expanded="false" aria-controls="shop" 
+                        class="dropdown__toggle"><i class="svg-chevron-down dropdown__chevron"></i>
+                        </button>
+                    </a>
+                    <div id="shop" class="dropdown__content bigmenu__wrapper z-up" aria-hidden="true">
+                        <div class="container bigmenu__content">
+                            shop big menu
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">About</a></li>
             </ul>
         </nav>
     </header>
