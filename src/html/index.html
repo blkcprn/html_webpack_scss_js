@@ -2,23 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../images/icon.png"/>
     <title>Index</title>
 </head>
 <body>
-    <h1>content</h1>
-    <section class="container hero">
-        <div class="swiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-            </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-scrollbar"></div>
+    <header id="header" class="header">
+        <div class="container">
+            <ul class="options">
+                <li class="dropdown">
+                    <button class="dropdown__toggle" 
+                        aria-expanded="false" 
+                        aria-controls="language">en</button>
+                    <ul id="language" class="dropdown__content z-up" aria-hidden="true"> 
+                        <li><a href="#" tabindex="-1">en</a></li>
+                        <li><a href="#" tabindex="-1">ru</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="user__link" aria-label="Got to user cabinet">
+                        <i class="svg-person"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </section>
+        <nav class="menu">
+            <button class="menu__trigger" data-open-btn 
+                data-target="mobileMenu"><i class="svg-list"></i></button>
+            <ul class="menu__list">
+                <li><a href="#">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main" class="main">
+        <section class="container hero">
+            <div class="swiper hero__swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="hero__slide">
+                            first slide
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="hero__slide">
+                            second slide
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="hero__slide">
+                            third slide
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer" class="footer">
+        <div class="footer__mode">
+            <label for="mode-btn" class="mode-trigger"></label>
+            <input id="mode-btn" type="checkbox" aria-pressed="false">
+        </div>
+    </footer>
+    <div class="overlay"></div>
+    <div id="mobileMenu" class="modal mobile-menu">
+        <button class="modal__close-btn" data-close-btn><i class="svg-x"></i></button>
+        <div class="mobile-menu__menu">
+            <ul class="mobile-menu__list">
+                <li><a href="#" tabindex="-1">Home</a></li>
+            </ul>
+        </div>
+        <div class="enter">
+            <a class="btn-light" href="#" tabindex="-1">Sign In</a>
+            <a class="btn-dark" href="#" tabindex="-1">Sign Up</a>
+        </div>
+    </div>
 </body>
 </html>

@@ -44,7 +44,7 @@ class Modal {
             this.overlay.classList.add(this.activeClass);
             this.getLinks(elem).forEach((link) => {
                 this.setTabindex(link, true);
-            }); 
+            });
         } else {
             elem.classList.remove(this.activeClass);
             this.overlay.classList.remove(this.activeClass);
@@ -87,7 +87,10 @@ class Dropdown {
         this.dropdownSelector = options.dropdownSelector ?? ".dropdown";
         this.toggleSelector = options.toggleSelector ?? ".dropdown__toggle";
         this.contentSelector = options.contentSelector ?? ".dropdown__content";
-        this.accordionSelector = options.accordionSelector ?? "accordion-content";
+        this.accordionSelector = options.accordionSelector ?? "accordion";
+        this.treeSelector = options.treeSelector ?? "tree";
+        this.toRightSelector = options.toRightSelector ?? "to-right";
+        this.toLeftSelector = options.toLeftSelector ?? "to-left";
         this.activeClass = options.activeClass ?? "active";
         this.dropdownElems = document.querySelectorAll(this.dropdownSelector);
         this.setup();
@@ -165,7 +168,7 @@ class Dropdown {
     toggleContentVisible(content, show) {
         if (show) {
             if (!content.classList.contains(this.activeClass)) {
-                if (content.classList.contains("tree-content") && content.dataset.level > 0) {
+                if (content.classList.contains(this.treeSelector) && content.dataset.level > 0) {
                     const fitClass = this.getElemFitClass(content);
                     content.classList.add(fitClass);
                 }
@@ -178,16 +181,14 @@ class Dropdown {
         }
     }
     getElemFitClass(elem) {
-        let fitClass = "to-right";
         const contentRect = elem.getBoundingClientRect();
         const windowWidth  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         if (contentRect.x - contentRect.width < 0) {
-            fitClass = "to-right";
+            return this.toRightSelector;
         }
         if (contentRect.x + contentRect.width > windowWidth) {
-            fitClass = "to-left";
+            return this.toLeftSelector;
         }
-        return fitClass;
     }
     setTabindex(link, show, exceptClass=this.activeClass) {
         if (!link.classList.contains(exceptClass)) {

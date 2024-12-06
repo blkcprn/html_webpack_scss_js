@@ -1,56 +1,45 @@
 :root { 
     --min-body-width: 320px;
-    --max-body-width: 1400px;
+    --max-body-width: 1700px;
+    --min-container-width: 320px;
+    --max-container-width: 1400px;
   
     --base-font-size: 14px;
     --big-font-size: 1.5em;
-    --bigger-font-size: 2em;
-    --small-font-size: 0.9em;
-    --smaller-font-size: 0.7em;
+    --small-font-size: 0.72em;
     --base-letter-spacing: 0em;
     --base-line-height: 1.36em;
   
     --base-gap:  1em;
     --big-gap: 2em;
-    --small-gap: 0.5em;
+    --small-gap: 0.3em;
     --anim-speed: 0.3s;
-    --hover-opacity: 0.2;
+    --anim-timing: ease-in-out;
   
     --base-font-weight: 400;
     --strong-font-weight: 700;
     --weak-font-weight: 300;
   
-    --bg-html-color: #ffffff;
-    --bg-body-color: #ffffff;
+    --light-color: #ffffff;
+    --dark-color: #212121;
     --text-color: #212121;
     --flash-color: #f1f2f6; 
     --accent-color: #2bcbba;
     --mark-color: #ff4757;
     --weak-contrast-color: #d1d8e0;
     --medium-contrast-color: #687080;
-    --strong-contrast-color: #212121;
 
-    --white-color: #ffffff;
-    --black-color: #212121;
+    --base-anim: var(--anim-speed) var(--anim-timing);
 
-    --transition-color: color var(--anim-speed);
-    --transition-background-color: background-color var(--anim-speed);
-    --transition-border: border var(--anim-speed);
-    --transition-transform: transform var(--anim-speed);
-
-    --shadow: 0px 10px 20px 0px rgb(0 0 0 / 20%);
+    --shadow: 0px 10px 20px rgb(21 21 21 / 13%);
 }
 [data-mode="dark"] {
-    --bg-html-color: #ffffff;
-    --bg-body-color: #ffffff;
+    --light-color: #cccccc;
+    --dark-color: #212121;
     --text-color: #212121;
     --flash-color: #f1f2f6; 
     --accent-color: #2bcbba;
     --mark-color: #ff4757;
     --weak-contrast-color: #d1d8e0;
     --medium-contrast-color: #687080;
-    --strong-contrast-color: #212121;
-
-    --white-color: #ffffff;
-    --black-color: #212121;
 }

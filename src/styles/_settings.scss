@@ -3,7 +3,6 @@
 
 html {
     box-sizing: border-box;
-    background-color: var(--bg-html-color);
     scroll-behavior: smooth;
     overflow-x: hidden;
     height: 100%;
@@ -22,7 +21,7 @@ body {
     line-height: var(--base-line-height);
     font-weight: var(--base-font-weight);
     margin: 0 auto;
-    background-color: var(--bg-body-color);
+    background-color: var(--light-color);
     color: var(--text-color);
     min-width: var(--min-body-width);
     max-width: var(--max-body-width);
@@ -67,9 +66,9 @@ h4 {
     font-size: 1em;
 }
 textarea {
-    max-width: var(--max-body-width);
-    min-width: calc(var(--min-body-width) / 2);
-    min-height: calc(var(--min-body-width) / 2);
+    max-width: var(--max-container-width);
+    min-width: calc(var(--min-container-width) / 2);
+    min-height: calc(var(--min-container-width) / 2);
     padding: var(--base-gap);
 }
 input, textarea, select {
@@ -87,54 +86,54 @@ input[type=checkbox], input[type=radio] {
 ul {
     list-style: none;
 }
-svg, path {
+i, svg, path {
     pointer-events: none;
 }
-.disabled-link {
-    pointer-events: none;
-    cursor: default;
-}
-.pointer {
-    cursor: pointer;
-}
-.hidden {
-    display: none;
-}
+// .disabled-link {
+//     pointer-events: none;
+//     cursor: default;
+// }
+// .pointer {
+//     cursor: pointer;
+// }
+// .hidden {
+//     display: none;
+// }
 .visually-hidden {
     @include mixins.visually-hidden();
 }
-.stop-scroll {
-    @include mixins.stop-scroll();
-}
-.burger {
-    @include mixins.burger();
-}
-.relative {
-    position: relative;
-}
-.absolute {
-    position: absolute;
-}
+// .stop-scroll {
+//     @include mixins.stop-scroll();
+// }
+// .burger {
+//     @include mixins.burger();
+// }
+// .relative {
+//     position: relative;
+// }
+// .absolute {
+//     position: absolute;
+// }
 .container {
     margin: 0 auto;
-    min-width: var(--min-body-width);
-    max-width: var(--max-body-width);
+    min-width: var(--min-container-width);
+    max-width: var(--max-container-width);
     padding: 0 var(--base-gap);
 }
 .no-wrap {
     white-space: nowrap;
 }
-.scroller {
-    display: grid;
-    grid-template-rows: min-content;
-    grid-auto-flow: column;
-    gap: var(--base-gap);
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    &__item {
-        position: relative;
-        scroll-snap-align: start;
-        scroll-padding-inline: var(--base-gap);
-        width: 100vw;
-    }
-}
+// .scroller {
+//     display: grid;
+//     grid-template-rows: min-content;
+//     grid-auto-flow: column;
+//     gap: var(--base-gap);
+//     overflow-x: auto;
+//     overscroll-behavior-inline: contain;
+//     &__item {
+//         position: relative;
+//         scroll-snap-align: start;
+//         scroll-padding-inline: var(--base-gap);
+//         width: 100vw;
+//     }
+// }
