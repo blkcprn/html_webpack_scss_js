@@ -9,43 +9,114 @@
 </head>
 <body>
     <header id="header" class="header">
-        <div class="container">
-            <ul class="options">
-                <li class="dropdown">
-                    <button class="dropdown__toggle" 
-                        aria-expanded="false" 
-                        aria-controls="language">en</button>
-                    <ul id="language" class="dropdown__content z-up" aria-hidden="true"> 
-                        <li><a href="#" tabindex="-1">en</a></li>
-                        <li><a href="#" tabindex="-1">ru</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="user__link" aria-label="Got to user cabinet">
-                        <i class="svg-person"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <nav class="menu">
-            <button class="menu__trigger" data-open-btn 
-                data-target="mobileMenu"><i class="svg-list"></i></button>
-            <ul class="menu__list">
-                <li><a href="#">Home</a></li>
-                <li class="dropdown bigmenu">
-                    <a href="#">Shop<button aria-expanded="false" aria-controls="shop" 
-                        class="dropdown__toggle"><i class="svg-chevron-down dropdown__chevron"></i>
+        <div class="header__top">
+            <div class="container header__top-inner">
+                <ul class="inform">
+                    <li>
+                        <a href="#" aria-label="Go to instagram">
+                            <i class="svg-instagram"></i>300K Followers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Go to facebook">
+                            <i class="svg-facebook"></i>300K Followers
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Blog<button aria-expanded="false" aria-controls="blog" 
+                            class="dropdown__toggle"><i class="svg-chevron-down dropdown__chevron"></i>
+                            </button>
+                        </a>
+                        <ul id="blog" class="dropdown__content z-up tree__content sublist" aria-hidden="true"> 
+                            <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                            <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                            <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                            <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                            <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                            <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                            <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                            <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="options">
+                    <li class="dropdown">
+                        <button class="dropdown__toggle options__toggle" 
+                            aria-expanded="false" 
+                            aria-controls="language">en<i class="svg-chevron-down dropdown__chevron"></i>
                         </button>
-                    </a>
-                    <div id="shop" class="dropdown__content bigmenu__wrapper z-up" aria-hidden="true">
-                        <div class="container bigmenu__content">
-                            shop big menu
-                        </div>
-                    </div>
-                </li>
-                <li><a href="#">About</a></li>
-            </ul>
-        </nav>
+                        <ul id="language" class="dropdown__content z-up sublist options__list" aria-hidden="true"> 
+                            <li><a href="#" tabindex="-1" class="active">en</a></li>
+                            <li><a href="#" tabindex="-1">ru</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <button class="dropdown__toggle options__toggle" 
+                            aria-expanded="false" 
+                            aria-controls="currency">usd<i class="svg-chevron-down dropdown__chevron"></i>
+                        </button>
+                        <ul id="currency" class="dropdown__content z-up sublist options__list" aria-hidden="true"> 
+                            <li><a href="#" tabindex="-1" class="active">usd</a></li>
+                            <li><a href="#" tabindex="-1">rub</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="user__link" aria-label="Got to user cabinet">
+                            <i class="svg-person"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header__main">
+            <div class="container header__main-inner">
+                <nav class="menu">
+                    <a href="#" class="logo">TheCompany</a>
+                    <button class="menu__trigger" data-open-btn 
+                        data-target="mobileMenu"><i class="svg-list"></i></button>
+                    <ul class="menu__list">
+                        <li><a href="#" class="active">Home</a></li>
+                        <li class="dropdown bigmenu">
+                            <a href="#">Shop<button aria-expanded="false" aria-controls="shop" 
+                                class="dropdown__toggle"><i class="svg-chevron-down dropdown__chevron"></i>
+                                </button>
+                            </a>
+                            <div id="shop" class="dropdown__content bigmenu__wrapper z-up" aria-hidden="true">
+                                <div class="container bigmenu__content">
+                                    shop big menu
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </nav>
+                <ul class="shop-icons">
+                    <li class="shop-icons__item">
+                        <button data-open-btn data-target="searchModal">
+                            <i class="svg-search"></i>
+                        </button>
+                    </li>
+                    <li class="shop-icons__item">
+                        <button  data-open-btn data-target="wishModal">
+                            <i class="svg-heart"></i>
+                        </button>
+                        <span class="shop-icons__qty">3</span>
+                    </li>
+                    <li class="shop-icons__item">
+                        <button  data-open-btn data-target="compareModal">
+                            <i class="svg-shuffle"></i>
+                        </button>
+                        <span class="shop-icons__qty">3</span>
+                    </li>
+                    <li class="shop-icons__item">
+                        <button  data-open-btn data-target="bagModal">
+                            <i class="svg-bag"></i>
+                        </button>
+                        <span class="shop-icons__qty">3</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </header>
     <main id="main" class="main">
         <section class="container hero">
@@ -75,9 +146,17 @@
         </section>
     </main>
     <footer id="footer" class="footer">
-        <div class="footer__mode">
-            <label for="mode-btn" class="mode-trigger"></label>
-            <input id="mode-btn" type="checkbox" aria-pressed="false">
+        <div class="footer__top">
+            <div class="container footer__top-inner">
+                <div class="footer__mode">
+                    <label for="mode-btn" class="mode-trigger"></label>
+                    <input id="mode-btn" type="checkbox" aria-pressed="false">
+                </div>
+            </div>
+        </div>
+        <div class="footer__top">
+            <div class="container footer__main-inner">
+            </div>
         </div>
     </footer>
     <div class="overlay"></div>
@@ -85,7 +164,44 @@
         <button class="modal__close-btn" data-close-btn><i class="svg-x"></i></button>
         <div class="mobile-menu__menu">
             <ul class="mobile-menu__list">
-                <li><a href="#" tabindex="-1">Home</a></li>
+                <li><a href="#" tabindex="-1" class="active">Home</a></li>
+                <li class="dropdown accordion" data-except-event="hover">
+                    <h3 class="mobile-menu__title">
+                        <a href="#" tabindex="-1">Shop</a>
+                        <button aria-expanded="false" aria-controls="m-shop" 
+                            class="dropdown__toggle"><i class="svg-chevron-down dropdown__chevron"></i>
+                        </button>
+                    </h3>
+                    <ul id="m-shop" class="dropdown__content accordion__content" aria-hidden="true">
+                        <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                        <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                        <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                        <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                        <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                        <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                        <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                        <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" tabindex="-1">About</a></li>
+                <li class="dropdown accordion" data-except-event="hover">
+                    <h3 class="mobile-menu__title">
+                        <a href="#"  tabindex="-1">Blog</a>
+                        <button aria-expanded="false" aria-controls="m-blog" 
+                            class="dropdown__toggle"><i class="svg-chevron-down dropdown__chevron"></i>
+                        </button>
+                    </h3>
+                    <ul id="m-blog" class="dropdown__content accordion__content" aria-hidden="true">
+                        <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                        <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                        <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                        <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                        <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                        <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                        <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                        <li><a href="#" tabindex="-1">Lorem, ipsum dolor.</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <div class="enter">
@@ -93,5 +209,34 @@
             <a class="btn-dark" href="#" tabindex="-1">Sign Up</a>
         </div>
     </div>
+    <div id="searchModal" class="modal search-modal">
+        <button class="modal__close-btn" data-close-btn><i class="svg-x"></i></button>
+        <form action="#" class="search-form">
+            <span class="search-form__icon disabled"><i class="svg-arrow-right"></i></span>
+            <input type="search" class="search-form__input" placeholder="search">
+            <button class="search-form__icon search-form__submit" type="submit">
+                <i class="svg-search"></i>
+            </button>
+        </form>
+    </div>
+    <div id="wishModal" class="modal wish-modal">
+        <button class="modal__close-btn" data-close-btn><i class="svg-x"></i></button>
+        <div class="wish-modal__content">
+            <ul class="wish-modal__list"></ul>
+        </div>
+    </div>
+    <div id="compareModal" class="modal compare-modal">
+        <button class="modal__close-btn" data-close-btn><i class="svg-x"></i></button>
+        <div class="compare-modal__content">
+            <ul class="compare-modal__list"></ul>
+        </div>
+    </div>
+    <div id="bagModal" class="modal bag-modal">
+        <button class="modal__close-btn" data-close-btn><i class="svg-x"></i></button>
+        <div class="bag-modal__content">
+            <ul class="bag-modal__list"></ul>
+        </div>
+    </div>
 </body>
 </html>
+
