@@ -87,8 +87,8 @@ class Dropdown {
         this.dropdownSelector = options.dropdownSelector ?? ".dropdown";
         this.toggleSelector = options.toggleSelector ?? ".dropdown__toggle";
         this.contentSelector = options.contentSelector ?? ".dropdown__content";
-        this.accordionSelector = options.accordionSelector ?? "accordion";
-        this.treeSelector = options.treeSelector ?? "tree";
+        this.accordionSelector = options.accordionSelector ?? "accordion__content";
+        this.treeSelector = options.treeSelector ?? "tree__content";
         this.toRightSelector = options.toRightSelector ?? "to-right";
         this.toLeftSelector = options.toLeftSelector ?? "to-left";
         this.activeClass = options.activeClass ?? "active";
@@ -327,5 +327,8 @@ window.addEventListener("DOMContentLoaded", () => {
         },
     });
 });
+
+
+
 
 
